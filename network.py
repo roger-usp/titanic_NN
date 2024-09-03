@@ -40,9 +40,10 @@ class Network:
 
     def fit(self, train_x, train_y, batch_size=None, epochs=None, learning_rate=None):
         n_samples = train_x.shape[1]
-        batch_size = int(batch_size)
         if batch_size is None:
             batch_size = n_samples
+        elif not isinstance(batch_size, int):
+            raise Exception(f"batch_size must be int")
         elif batch_size > n_samples:
             raise Exception(f"batch_size can't be greater than {n_samples}")
 
