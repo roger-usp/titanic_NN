@@ -13,7 +13,8 @@ class Layer:
     def initialize_weights(self, n_input, n_output):
         xavier_stddev = np.sqrt(2.0 / (n_input + n_output))
         return np.random.normal(loc=0.0, scale=xavier_stddev, size=(n_input, n_output))
-
+        #return np.ones(shape=(n_input, n_output))
+    
     def get_Z(self, X):
         n_inputs, n_samples = X.shape
         specific_bias = np.tile(self.bias, n_samples)

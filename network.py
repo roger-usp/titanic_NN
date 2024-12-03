@@ -71,7 +71,7 @@ class Network:
                     batch_train_y = train_y[:, batch_idx*batch_size :]
 
                 mean_error = self.fit_batch(batch_train_x, batch_train_y, learning_rate=learning_rate)
-                print(f"\rEpoch: {epoch}\tError:{mean_error}", end="")
+                print(f"\rEpoch: {epoch}\tError:{mean_error.mean()}", end="")
 
 
                 
